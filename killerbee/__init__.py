@@ -73,6 +73,10 @@ class KillerBee:
         self.__bus = None
         self.driver = None
 
+        if device is "seizemote":
+          from dev_seizemote import SEIZEMOTE
+          self.driver = SEIZEMOTE(dev=device)
+
         # IP devices may be the most straightforward, and we aren't doing
         # discovery, just connecting to defined addresses, so we'll check
         # first to see if we have an IP address given as our device parameter.
